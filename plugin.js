@@ -37,7 +37,7 @@ var gettingPics = function gettingPics() {
 
                 // Creating the img
                 if (data.data[i].type == 'image') {
-                    var append = '<div class="contener">';
+                    var append = '<li class="contener">';
                      append += '<div class="imgcontener">'
                     append += '<img src="';
                    append +=  data.data[i].images.standard_resolution.url;
@@ -49,7 +49,7 @@ var gettingPics = function gettingPics() {
                     append += data.data[i].user.full_name;
                     append +='</div>';
                     
-                    append +=  '</div>';
+                    append +=  '</li>';
 
                     $('.g').append(append);
 

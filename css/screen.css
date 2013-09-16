@@ -94,7 +94,7 @@ body {
 
 .text-container{
     height:30px;
-     width: 100%;
+    width: 100%;
     position:absolute;
     bottom:0px;
     background-color:rgba(0,0,0,0.5);
@@ -106,6 +106,16 @@ body {
 
 	 width: auto;
      height:15px;
+
+    margin-top: 6px;
+   
+
+    cursor: pointer;
+
+}
+
+.text a {
+    text-decoration: none;
     color:#fff;
    
     font-size:14px;
@@ -113,17 +123,6 @@ body {
     
     font-family:sans-serif;
     text-decoration:none;
-   
-
-    cursor: pointer;
-    
-
-
-    
-
-  
-    
-
 }
 
 

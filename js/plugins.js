@@ -29,78 +29,27 @@ var gettingPics = function gettingPics(){
         cache: false,
         url: "https://api.instagram.com/v1/tags/crmaxv/media/recent?client_id=7359917ce0c44b26b15157dc9f64fbb5&count=-1",
         success: function(data) {
-
-
-                   console.log(data);
+            console.log(data);
             var length = data.data.length,
-                j = 0;
+            j = 0;
             for (var i = 0; i < length; i++) {
-                // Creating the row
-
                 // Creating the img
                 if (data.data[i].type == 'image') {
-                    var append = '<div class="contener">';
-                        append += '<div class="text-container ">';
-                        append += '<p class="text">';
-                    append+= data.data[i].user.full_name;
-
-                    
+                    var append = '<li class="contener">';
+                    append += '<div class="text-container ">';
+                    append += '<p class="text">';
+                    append += '<a href="http://www.instagram.com/'+data.data[i].user.full_name+'">'+data.data[i].user.full_name;
+                    append += '</a>';
                     append += "</p>";
                     append += '</div>';
-                
-                     append += '<div class="imgcontener">';
-
+                    append += '<div class="imgcontener">';
                     append += '<img src="';
-                   append +=  data.data[i].images.standard_resolution.url;
-                   append += '"'
-                    append += '  alt="Product Name"> ';
-                    
+                    append +=  data.data[i].images.standard_resolution.url;
+                    append += '"'
+                    append += '  alt="Product Name"> '; 
                     append += '</div>';
-                 
-                    
-                    append +=  '</div>';
-
+                    append +=  '</li>';
                     $('.g').append(append);
-
-              /*                var append = '<div class="span3 item container-item">';
-                     append += '<div class="span12 center item-desc">'
-                    append += '<img src="';
-                   append +=  data.data[i].images.standard_resolution.url;
-                   append += '"'
-                    append += '  alt="Product Name"> ';
-                    
-                    append += '</div>';
-                    append += '<a href="http://www.instagram.com/maximerimbert" target="_blank" class="button-user span4">';
-                    append+= data.data[i].user.full_name;
-
-                    
-                    append += "</a>"
-                  
-                    
-                    append +=  '</div>';
-
-                    $('.g').append(append);*/
-
-
-                  /*  var newDivImg = document.createElement('div');
-                    var newImg = document.createElement('img');
-                    newDivImg.className = 'span3 item container-item item-' + i;
-                    newDivImg.setAttribute('data-img', i);
-                    newImg.className = 'span12';
-                    newImg.src = data.data[i].images.standard_resolution.url;
-                    document.getElementsByClassName('row-' + j)[0].appendChild(newDivImg);
-                    document.getElementsByClassName('item-' + i)[0].appendChild(newImg);
-                    var newDivDesc = document.createElement('div');
-                    newDivDesc.className = 'span12 center item-desc item-desc-' + i;
-                    newDivDesc.setAttribute('data-desc', i);
-                    var texte = document.createTextNode(data.data[i].user.full_name);
-                    var newButton = document.createElement('a');
-                    newButton.href = 'http://www.instagram.com/' + data.data[i].user.username;
-                    newButton.target = '_blank';
-                    newButton.className = 'button-user span4';
-                    newButton.appendChild(texte);
-                    document.getElementsByClassName('item-' + i)[0].appendChild(newDivDesc);
-                    document.getElementsByClassName('item-desc-' + i)[0].appendChild(newButton);*/
                 }
 
             }
