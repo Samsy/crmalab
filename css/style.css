@@ -1,0 +1,175 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline; }
+
+html {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle; }
+
+q, blockquote {
+  quotes: none; }
+
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none; }
+
+a img {
+  border: none; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block; }
+
+.transition, .content .row .item .item-desc-video .button-user, .content .row .item .item-desc-video .button-user:hover, .content .row .item .item-desc .button-user, .content .row .item .item-desc .button-user:hover {
+  -webkit-transition: all 0.195s ease-in-out;
+  -moz-transition: all 0.195s ease-in-out;
+  -ms-transition: all 0.195s ease-in-out;
+  -o-transition: all 0.195s ease-in-out;
+  transition: all 0.195s ease-in-out; }
+
+.span12 {
+  width: 100%; }
+
+.span1 {
+  width: 8.33333%; }
+
+.append-1 {
+  margin-right: 8.33333%; }
+
+.append-half {
+  margin-right: 4.16667%; }
+
+.prepend-1 {
+  margin-left: 8.33333%; }
+
+.prepend-half {
+  margin-left: 4.16667%; }
+
+.center {
+  text-align: center; }
+
+.right {
+  float: right; }
+
+body {
+  background: black; }
+
+.header {
+  top: 15px;
+  position: fixed;
+  z-index: 999; }
+
+.header .header-img {
+  width: 100%;
+  height: 100%; }
+
+.header .logo {
+  min-width: 100px;
+  min-height: 100px; }
+
+.content {
+  width: 100%; }
+
+.content .row {
+  display: inline-block;
+  margin-bottom: -6px; }
+
+/*--------------------------- */
+.text-container {
+  height: 30px;
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+  background-color: rgba(0, 0, 0, 0.5);
+  text-align: center; }
+
+.text-container2 {
+  height: 30px;
+  width: 100%;
+  position: absolute;
+  top: 0px;
+  background-color: rgba(0, 0, 0, 0.5);
+  text-align: center; }
+
+.text {
+  width: auto;
+  height: 15px;
+  margin-top: 6px;
+  cursor: pointer; }
+  .text a {
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    letter-spacing: 2px;
+    font-family: sans-serif;
+    text-decoration: none; }
+
+.contener {
+  position: relative; }
+
+.g {
+  padding: 0;
+  overflow: hidden;
+  text-align: center; }
+
+.g > .contener {
+  float: left;
+  width: 50%; }
+
+.g img {
+  display: block; }
+.g video {
+  display: block; }
+
+.g li:nth-child(odd) {
+  clear: left; }
+
+img, object, video {
+  max-width: 100%;
+  border: 0; }
+
+a img {
+  border: 0;
+  outline: 0; }
+
+@media screen and (max-width: 25em) {
+  .g > .contener {
+    width: 100%; }
+
+  .g li:nth-child(1n+1) {
+    clear: left; }
+
+  .g li:nth-child(odd) {
+    clear: none; } }
+@media screen and (min-width: 40em) {
+  .g > .contener {
+    width: 33.33333%; }
+
+  .g li:nth-child(3n+1) {
+    clear: left; }
+
+  .g li:nth-child(odd) {
+    clear: none; } }
+@media screen and (min-width: 55em) {
+  .g > .contener {
+    width: 25%; }
+
+  .g > .contener:nth-child(4n+1) {
+    clear: left; }
+
+  .g > .contener:nth-child(3n+1) {
+    clear: none; } }
