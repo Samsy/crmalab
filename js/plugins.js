@@ -40,7 +40,7 @@ var gettingPics = function gettingPics(){
             for (var i = 0; i < length; i++) {
                 // Creating the img
                 if (data.data[i].type == 'image') {
-                    var append = '<li class="contener">';
+                    var append = '<li class="contener item-'+(i+LAST_ITEM)+'" >';
                     append += '<div class="text-container ">';
                     append += '<p class="text">';
                     append += '<a href="http://www.instagram.com/'+data.data[i].user.full_name+'">'+data.data[i].user.full_name;
@@ -54,7 +54,7 @@ var gettingPics = function gettingPics(){
                     $('.g').append(append);
                 }
                 else {
-                    var append = '<li class="contener">';
+                    var append = '<li class="contener item-'+(i+LAST_ITEM)+'">';
                     append += '<div class="text-container2">';
                     append += '<p class="text">';
                     append += '<a href="http://www.instagram.com/'+data.data[i].user.full_name+'">'+data.data[i].user.full_name;
@@ -72,9 +72,7 @@ var gettingPics = function gettingPics(){
                 if (i+1 == length) {
                     $('.item-'+(i+LAST_ITEM)).addClass('last-item');
                     LAST_ITEM = i+1;
-                    if (API_URL) {
-                        $('.g').append('<li class="contener" ><div class="wait">...</div></li>');
-                    }
+                    
                 }
             }       
         }
