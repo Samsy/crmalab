@@ -21,14 +21,19 @@
     }
 }());
 
+LAST_ITEM = 0;
+
 // Place any jQuery/helper plugins in here.
 var gettingPics = function gettingPics(){
     $.ajax({
         type: "GET",
         dataType: "jsonp",
         cache: false,
-        url: "https://api.instagram.com/v1/tags/crmaxv/media/recent?client_id=7359917ce0c44b26b15157dc9f64fbb5&count=-1",
+        url: API_URL,
         success: function(data) {
+            $('.wait').remove();
+            // next api call url
+            API_URL = data.pagination.next_url;
             console.log(data);
             var length = data.data.length,
             j = 0;
@@ -61,6 +66,15 @@ var gettingPics = function gettingPics(){
                     append += '</div>';
                     append += '</li>';
                     $('.g').append(append);
+                }
+
+                $('.item-'+(i+LAST_ITEM)).delay(i*50).fadeIn();
+                if (i+1 == length) {
+                    $('.item-'+(i+LAST_ITEM)).addClass('last-item');
+                    LAST_ITEM = i+1;
+                    if (API_URL) {
+                        $('.g').append('<li class="contener" ><div class="wait">...</div></li>');
+                    }
                 }
             }       
         }

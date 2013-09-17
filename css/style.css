@@ -173,3 +173,12 @@ a img {
 
   .g > .contener:nth-child(3n+1) {
     clear: none; } }
+@media screen and (min-width: 123.75em) {
+  .g > .contener {
+    width: 20%; }
+
+  .g > .contener:nth-child(4n+1) {
+    clear: left; }
+
+  .g > .contener:nth-child(3n+1) {
+    clear: none; } }
