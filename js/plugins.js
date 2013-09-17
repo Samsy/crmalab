@@ -26,14 +26,23 @@ LAST_ITEM = 0;
 // Place any jQuery/helper plugins in here.
 var gettingPics = function gettingPics(){
 
+
+    
     console.log('API Call to '+API_URL+' ...');
     $.ajax({
         type: "GET",
         dataType: "jsonp",
         cache: false,
         url: API_URL,
+        beforeSend: function(){
+            $('.loader').fadeIn('fast');
+            $('.g').hide();
+        },
+        complete: function(){
+            $('.loader').fadeOut('fast');
+            $('.g').fadeIn('slow');
+        },
         success: function(data) {
-            $('.wait').remove();
             // next api call url
             API_URL = data.pagination.next_url;
             // console.log(data);
