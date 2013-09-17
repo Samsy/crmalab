@@ -57,7 +57,7 @@ var gettingPics = function gettingPics(){
                     append += "</p>";
                     append += '</div>';
                     append += '<div class="imgcontener">';
-                    append += '<video src="'+data.data[i].videos.standard_resolution.url+'" controls="undefined" buffer="undefined"></video'; 
+                    append += '<video src="'+data.data[i].videos.standard_resolution.url+'" controls="undefined" buffer="undefined"></video>'; 
                     append += '</div>';
                     append += '</li>';
                     $('.g').append(append);
