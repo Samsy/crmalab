@@ -25,6 +25,8 @@ LAST_ITEM = 0;
 
 // Place any jQuery/helper plugins in here.
 var gettingPics = function gettingPics(){
+
+    console.log('API Call to '+API_URL+' ...');
     $.ajax({
         type: "GET",
         dataType: "jsonp",
@@ -34,7 +36,7 @@ var gettingPics = function gettingPics(){
             $('.wait').remove();
             // next api call url
             API_URL = data.pagination.next_url;
-            console.log(data);
+            // console.log(data);
             var length = data.data.length,
             j = 0;
             for (var i = 0; i < length; i++) {
@@ -69,6 +71,7 @@ var gettingPics = function gettingPics(){
                 }
 
                 $('.item-'+(i+LAST_ITEM)).delay(i*50).fadeIn();
+                
                 if (i+1 == length) {
                     $('.item-'+(i+LAST_ITEM)).addClass('last-item');
                     LAST_ITEM = i+1;
