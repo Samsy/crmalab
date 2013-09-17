@@ -43,7 +43,7 @@ var gettingPics = function gettingPics(){
                     var append = '<li class="contener">';
                     append += '<div class="text-container ">';
                     append += '<p class="text">';
-                    append += '<a href="http://www.instagram.com/'+data.data[i].user.full_name+'">'+data.data[i].user.full_name;
+                    append += '<a href="http://www.instagram.com/'+data.data[i].user.username+'">'+data.data[i].user.full_name;
                     append += '</a>';
                     append += "</p>";
                     append += '</div>';
@@ -57,7 +57,7 @@ var gettingPics = function gettingPics(){
                     var append = '<li class="contener">';
                     append += '<div class="text-container2">';
                     append += '<p class="text">';
-                    append += '<a href="http://www.instagram.com/'+data.data[i].user.full_name+'">'+data.data[i].user.full_name;
+                    append += '<a href="http://www.instagram.com/'+data.data[i].user.username+'">'+data.data[i].user.full_name;
                     append += '</a>';
                     append += "</p>";
                     append += '</div>';
