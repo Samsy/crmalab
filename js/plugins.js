@@ -58,15 +58,19 @@ var gettingPics = function gettingPics(){
 
                var append = '<li class="contener item-'+(i+LAST_ITEM)+'" >';
 
-                 /*@append += data.data[i].type == 'image' ? // image ?
-                            '<div class="text-container ">' : // yes
-                            '<div class="text-container2 ">'; // no
+               // si image : text
+               if (data.data[i].type == 'image') {
+                    append += '<div class="text-container ">';
+                    append += '<p class="text">';
+                    append += '<a href="http://www.instagram.com/'+data.data[i].user.username+'">'+data.data[i].user.full_name;
+                    append += '</a>';
+                    append += "</p>";
+                    append += '</div>';
+               }
+                
 
-                append += '<p class="text">';
-                append += '<a href="http://www.instagram.com/'+data.data[i].user.username+'">'+data.data[i].user.full_name;
-                append += '</a>';
-                append += "</p>";
-                append += '</div>';*/
+                
+
                 append += '<div class="imgcontener">';
 
                 append += data.data[i].type == 'image' ? // image ?
