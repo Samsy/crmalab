@@ -44,6 +44,10 @@ var gettingPics = function gettingPics(){
                 });
                 $(this).addClass('flip');
             });
+            $('.flip').click(function(){
+                $(this).removeClass('flip');
+                console.log('removed flip');
+            });
         },
         success: function(data) {
 
@@ -60,17 +64,13 @@ var gettingPics = function gettingPics(){
 
                // si image : text
                if (data.data[i].type == 'image') {
-                    append += '<div class="text-container ">';
+                    append += '<div class="text-container">';
                     append += '<p class="text">';
                     append += '<a href="http://www.instagram.com/'+data.data[i].user.username+'">'+data.data[i].user.full_name;
                     append += '</a>';
                     append += "</p>";
                     append += '</div>';
                }
-                
-
-                
-
                 append += '<div class="imgcontener">';
 
                 append += data.data[i].type == 'image' ? // image ?
