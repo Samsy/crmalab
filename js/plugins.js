@@ -43,41 +43,37 @@ var gettingPics = function gettingPics(){
             $('.g').fadeIn('slow');
         },
         success: function(data) {
+            
             // next api call url
             API_URL = data.pagination.next_url;
-            // console.log(data);
+            
             var length = data.data.length,
-            j = 0;
+            
             for (var i = 0; i < length; i++) {
-                // Creating the img
-                if (data.data[i].type == 'image') {
-                    var append = '<li class="contener item-'+(i+LAST_ITEM)+'" >';
-                    append += '<div class="text-container ">';
-                    append += '<p class="text">';
-                    append += '<a href="http://www.instagram.com/'+data.data[i].user.username+'">'+data.data[i].user.full_name;
-                    append += '</a>';
-                    append += "</p>";
-                    append += '</div>';
-                    append += '<div class="imgcontener">';
-                    append += '<img src="'+data.data[i].images.standard_resolution.url+'"alt="Product Name" />'; 
-                    append += '</div>';
-                    append += '</li>';
-                    $('.g').append(append);
-                }
-                else {
-                    var append = '<li class="contener item-'+(i+LAST_ITEM)+'">';
-                    append += '<div class="text-container2">';
-                    append += '<p class="text">';
-                    append += '<a href="http://www.instagram.com/'+data.data[i].user.username+'">'+data.data[i].user.full_name;
-                    append += '</a>';
-                    append += "</p>";
-                    append += '</div>';
-                    append += '<div class="imgcontener">';
-                    append += '<video src="'+data.data[i].videos.standard_resolution.url+'" controls="undefined" buffer="undefined"></video>'; 
-                    append += '</div>';
-                    append += '</li>';
-                    $('.g').append(append);
-                }
+
+                // Creating the item
+
+                var append = '<li class="contener item-'+(i+LAST_ITEM)+'" >';
+
+                append += data.data[i].type == 'image' ? // image ?
+                            '<div class="text-container ">' : // yes
+                            '<div class="text-container2 ">'; // no
+
+                append += '<p class="text">';
+                append += '<a href="http://www.instagram.com/'+data.data[i].user.username+'">'+data.data[i].user.full_name;
+                append += '</a>';
+                append += "</p>";
+                append += '</div>';
+                append += '<div class="imgcontener">';
+
+                append += data.data[i].type == 'image' ? // image ?
+                            '<img src="'+data.data[i].images.standard_resolution.url+'"alt="Product Name" />' : // yes
+                            '<video src="'+data.data[i].videos.standard_resolution.url+'" controls="undefined" buffer="undefined"></video>'; // no
+
+                append += '</div>';
+                append += '</li>';
+
+                $('.g').append(append);
 
                 $('.item-'+(i+LAST_ITEM)).delay(i*50).fadeIn();
                 
