@@ -193,7 +193,7 @@ body {
   width: 100%;
   position: absolute;
   bottom: 0px;
-  background-color: black;
+  background-color: orange;
   text-align: center;
   transform: rotateY(-180deg);
   -webkit-transform: rotateY(-180deg);
@@ -206,67 +206,80 @@ body {
 /* line 146, ../sass/style.sass */
 .text {
   width: auto;
-  height: 15px;
+  padding: 50px;
   margin-top: 6px;
   cursor: pointer;
 }
 /* line 151, ../sass/style.sass */
+.text .img_profile {
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  -o-border-radius: 25px;
+  display: inline-block;
+  border: 1px solid white;
+}
+/* line 160, ../sass/style.sass */
 .text a {
   text-decoration: none;
   color: white;
   font-size: 14px;
+  line-height: 50px;
   letter-spacing: 2px;
   font-family: sans-serif;
   text-decoration: none;
+  display: block;
 }
 
-/* line 161, ../sass/style.sass */
+/* line 171, ../sass/style.sass */
 .contener {
   -webkit-perspective: 900px;
   cursor: pointer;
   position: relative;
 }
 
-/* line 166, ../sass/style.sass */
+/* line 176, ../sass/style.sass */
 .g {
   padding: 0;
   overflow: hidden;
   text-align: center;
 }
 
-/* line 171, ../sass/style.sass */
+/* line 181, ../sass/style.sass */
 .g > .contener {
   float: left;
   width: 50%;
 }
 
-/* line 176, ../sass/style.sass */
+/* line 186, ../sass/style.sass */
 .g img {
   display: block;
 }
-/* line 178, ../sass/style.sass */
+/* line 188, ../sass/style.sass */
 .g video {
   display: block;
 }
 
-/* line 181, ../sass/style.sass */
+/* line 191, ../sass/style.sass */
 .g li:nth-child(odd) {
   clear: left;
 }
 
-/* line 184, ../sass/style.sass */
+/* line 194, ../sass/style.sass */
 img, object {
   max-width: 100%;
   border: 0;
 }
 
-/* line 188, ../sass/style.sass */
+/* line 198, ../sass/style.sass */
 a img {
   border: 0;
   outline: 0;
 }
 
-/* line 192, ../sass/style.sass */
+/* line 202, ../sass/style.sass */
 video, canvas {
   top: 0;
   left: 0;
@@ -275,13 +288,13 @@ video, canvas {
   height: auto;
 }
 
-/* line 199, ../sass/style.sass */
+/* line 209, ../sass/style.sass */
 video {
   height: 100%;
   position: absolute;
 }
 
-/* line 203, ../sass/style.sass */
+/* line 213, ../sass/style.sass */
 .imgcontener {
   width: 100%;
   height: 100%;
@@ -289,29 +302,13 @@ video {
 }
 
 @media screen and (max-width: 25em) {
-  /* line 209, ../sass/style.sass */
+  /* line 219, ../sass/style.sass */
   .g > .contener {
     width: 100%;
   }
 
-  /* line 212, ../sass/style.sass */
-  .g li:nth-child(1n+1) {
-    clear: left;
-  }
-
-  /* line 215, ../sass/style.sass */
-  .g li:nth-child(odd) {
-    clear: none;
-  }
-}
-@media screen and (min-width: 40em) {
-  /* line 219, ../sass/style.sass */
-  .g > .contener {
-    width: 33.33333%;
-  }
-
   /* line 222, ../sass/style.sass */
-  .g li:nth-child(3n+1) {
+  .g li:nth-child(1n+1) {
     clear: left;
   }
 
@@ -320,34 +317,50 @@ video {
     clear: none;
   }
 }
-@media screen and (min-width: 55em) {
+@media screen and (min-width: 40em) {
   /* line 229, ../sass/style.sass */
   .g > .contener {
-    width: 25%;
+    width: 33.33333%;
   }
 
   /* line 232, ../sass/style.sass */
-  .g > .contener:nth-child(4n+1) {
+  .g li:nth-child(3n+1) {
     clear: left;
   }
 
   /* line 235, ../sass/style.sass */
+  .g li:nth-child(odd) {
+    clear: none;
+  }
+}
+@media screen and (min-width: 55em) {
+  /* line 239, ../sass/style.sass */
+  .g > .contener {
+    width: 25%;
+  }
+
+  /* line 242, ../sass/style.sass */
+  .g > .contener:nth-child(4n+1) {
+    clear: left;
+  }
+
+  /* line 245, ../sass/style.sass */
   .g > .contener:nth-child(3n+1) {
     clear: none;
   }
 }
 @media screen and (min-width: 123.75em) {
-  /* line 239, ../sass/style.sass */
+  /* line 249, ../sass/style.sass */
   .g > .contener {
     width: 20%;
   }
 
-  /* line 242, ../sass/style.sass */
+  /* line 252, ../sass/style.sass */
   .g > .contener:nth-child(5n+1) {
     clear: left;
   }
 
-  /* line 245, ../sass/style.sass */
+  /* line 255, ../sass/style.sass */
   .g > .contener:nth-child(4n+1) {
     clear: none;
   }
