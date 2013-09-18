@@ -38,8 +38,8 @@ var gettingPics = function gettingPics(){
         complete: function(){
             $('.loader').fadeOut('fast');
             $('.g').fadeIn('slow');
-            $('.contener').click(function(){
-                $('.contener').each(function(){
+            $('.contener-img').click(function(){
+                $('.contener-img').each(function(){
                     $(this).removeClass('flip');
                 });
                 $(this).addClass('flip');
@@ -52,6 +52,7 @@ var gettingPics = function gettingPics(){
         success: function(data) {
 
             // next api call url
+            console.log(data);
             API_URL = data.pagination.next_url;
             
             var length = data.data.length;
@@ -59,15 +60,20 @@ var gettingPics = function gettingPics(){
             for (var i = 0; i < length; i++) {
 
                 // Creating the item
-
-               var append = '<li class="contener item-'+(i+LAST_ITEM)+'" >';
-
+                if(data.data[i].type == 'image'){
+                    var append = '<li class="contener contener-img item-'+(i+LAST_ITEM)+'" >';
+                }
+                else {
+                    var append = '<li class="contener item-'+(i+LAST_ITEM)+'" >';
+                }
                // si image : text
                if (data.data[i].type == 'image') {
                     append += '<div class="text-container">';
                     append += '<p class="text">';
-                    append += '<a href="http://www.instagram.com/'+data.data[i].user.username+'">'+data.data[i].user.full_name;
-                    append += '</a>';
+                    append += '<img src="'+data.data[i].user.profile_picture+'" class="img_profile" />';
+                    append += '<a href="http://www.instagram.com/'+data.data[i].user.username+'">';
+                    append += data.data[i].user.full_name+'</a>';
+                    append += '<p class="caption">'+data.data[i].caption.text+'</p>';
                     append += "</p>";
                     append += '</div>';
                }
