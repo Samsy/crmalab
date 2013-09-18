@@ -25,9 +25,6 @@ LAST_ITEM = 0;
 
 // Place any jQuery/helper plugins in here.
 var gettingPics = function gettingPics(){
-
-
-    
     console.log('API Call to '+API_URL+' ...');
     $.ajax({
         type: "GET",
@@ -41,6 +38,12 @@ var gettingPics = function gettingPics(){
         complete: function(){
             $('.loader').fadeOut('fast');
             $('.g').fadeIn('slow');
+            $('.contener').click(function(){
+                $('.contener').each(function(){
+                    $(this).removeClass('flip');
+                });
+                $(this).addClass('flip');
+            });
         },
         success: function(data) {
 
@@ -53,9 +56,9 @@ var gettingPics = function gettingPics(){
 
                 // Creating the item
 
-                var append = '<li class="contener item-'+(i+LAST_ITEM)+'" >';
+               var append = '<li class="contener item-'+(i+LAST_ITEM)+'" >';
 
-                append += data.data[i].type == 'image' ? // image ?
+                 /*@append += data.data[i].type == 'image' ? // image ?
                             '<div class="text-container ">' : // yes
                             '<div class="text-container2 ">'; // no
 
@@ -63,13 +66,13 @@ var gettingPics = function gettingPics(){
                 append += '<a href="http://www.instagram.com/'+data.data[i].user.username+'">'+data.data[i].user.full_name;
                 append += '</a>';
                 append += "</p>";
-                append += '</div>';
+                append += '</div>';*/
                 append += '<div class="imgcontener">';
 
                 append += data.data[i].type == 'image' ? // image ?
-                            '<img src="'+data.data[i].images.standard_resolution.url+'"alt="Product Name" />' : // yes
+                            '<img src="'+data.data[i].images.standard_resolution.url+'"alt="Product Name" class="image_insta" />' : // yes
                             '<canvas width="100%" height="100%"></canvas><video height="100%" width="100%" src="'+data.data[i].videos.standard_resolution.url+'" controls="undefined" buffer="undefined"></video>'; // no
-
+                
                 append += '</div>';
                 append += '</li>';
 
@@ -86,6 +89,7 @@ var gettingPics = function gettingPics(){
         }
     });
 }
+
 
 /* var hoverImages = function hoverImages(){
     var nrImg;
