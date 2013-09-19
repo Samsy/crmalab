@@ -306,19 +306,16 @@ video, canvas {
   width: 100%;
   max-width: 100%;
   height: auto;
-<<<<<<< HEAD
+  display: block;
 }
-=======
-  display: block; }
->>>>>>> master
 
-/* line 229, ../sass/style.sass */
+/* line 230, ../sass/style.sass */
 video {
   height: 100%;
   position: absolute;
 }
 
-/* line 233, ../sass/style.sass */
+/* line 234, ../sass/style.sass */
 .imgcontener {
   width: 100%;
   height: 100%;
@@ -326,65 +323,65 @@ video {
 }
 
 @media screen and (max-width: 25em) {
-  /* line 239, ../sass/style.sass */
+  /* line 240, ../sass/style.sass */
   .g > .contener {
     width: 100%;
   }
 
-  /* line 242, ../sass/style.sass */
+  /* line 243, ../sass/style.sass */
   .g li:nth-child(1n+1) {
     clear: left;
   }
 
-  /* line 245, ../sass/style.sass */
+  /* line 246, ../sass/style.sass */
   .g li:nth-child(odd) {
     clear: none;
   }
 }
 @media screen and (min-width: 40em) {
-  /* line 249, ../sass/style.sass */
+  /* line 250, ../sass/style.sass */
   .g > .contener {
     width: 33.33333%;
   }
 
-  /* line 252, ../sass/style.sass */
+  /* line 253, ../sass/style.sass */
   .g li:nth-child(3n+1) {
     clear: left;
   }
 
-  /* line 255, ../sass/style.sass */
+  /* line 256, ../sass/style.sass */
   .g li:nth-child(odd) {
     clear: none;
   }
 }
 @media screen and (min-width: 55em) {
-  /* line 259, ../sass/style.sass */
+  /* line 260, ../sass/style.sass */
   .g > .contener {
     width: 25%;
   }
 
-  /* line 262, ../sass/style.sass */
+  /* line 263, ../sass/style.sass */
   .g > .contener:nth-child(4n+1) {
     clear: left;
   }
 
-  /* line 265, ../sass/style.sass */
+  /* line 266, ../sass/style.sass */
   .g > .contener:nth-child(3n+1) {
     clear: none;
   }
 }
 @media screen and (min-width: 123.75em) {
-  /* line 269, ../sass/style.sass */
+  /* line 270, ../sass/style.sass */
   .g > .contener {
     width: 20%;
   }
 
-  /* line 272, ../sass/style.sass */
+  /* line 273, ../sass/style.sass */
   .g > .contener:nth-child(5n+1) {
     clear: left;
   }
 
-  /* line 275, ../sass/style.sass */
+  /* line 276, ../sass/style.sass */
   .g > .contener:nth-child(4n+1) {
     clear: none;
   }
