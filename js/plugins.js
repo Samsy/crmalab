@@ -71,10 +71,9 @@ var gettingPics = function gettingPics(){
                     append += '<div class="text-container">';
                     append += '<p class="text">';
                     append += '<img src="'+data.data[i].user.profile_picture+'" class="img_profile" />';
-                    append += '<a href="http://www.instagram.com/'+data.data[i].user.username+'">';
+                    append += '<a href="http://www.instagram.com/'+data.data[i].user.username+'" class="link_profile">';
                     append += data.data[i].user.full_name+'</a>';
-                    append += '<p class="caption">'+data.data[i].caption.text+'</p>';
-                    append += "</p>";
+                    append += '<span class="caption">'+data.data[i].caption.text+'</span></p>';
                     append += '</div>';
                }
                 append += '<div class="imgcontener">';
