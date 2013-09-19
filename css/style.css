@@ -306,7 +306,11 @@ video, canvas {
   width: 100%;
   max-width: 100%;
   height: auto;
+<<<<<<< HEAD
 }
+=======
+  display: block; }
+>>>>>>> master
 
 /* line 229, ../sass/style.sass */
 video {

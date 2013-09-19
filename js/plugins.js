@@ -81,7 +81,11 @@ var gettingPics = function gettingPics(){
                 append += data.data[i].type == 'image' ? // image ?
                             '<img src="'+data.data[i].images.standard_resolution.url+'"alt="Product Name" class="image_insta" />' : // yes
                             '<canvas width="100%" height="100%"></canvas><video height="100%" width="100%" src="'+data.data[i].videos.standard_resolution.url+'" controls="undefined" buffer="undefined"></video>'; // no
+<<<<<<< HEAD
                 
+=======
+               
+>>>>>>> master
                 append += '</div>';
                 append += '</li>';
 
