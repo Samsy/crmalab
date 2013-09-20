@@ -32,12 +32,16 @@ var gettingPics = function gettingPics(){
         cache: false,
         url: API_URL,
         beforeSend: function(){
-            $('.loader').fadeIn('fast');
-            $('.g').hide();
+            
+            $('.g').animate({ opacity: 0 }, 200, function() {
+                $('.loader').fadeIn('fast');
+            });
         },
         complete: function(){
-            $('.loader').fadeOut('fast');
-            $('.g').fadeIn('slow');
+            $('.loader').fadeOut('fast', function() {
+                $('.g').animate({ opacity: 1 });
+            });
+            
             $('.contener-img').click(function(){
                 $('.contener-img').each(function(){
                     $(this).removeClass('flip');
