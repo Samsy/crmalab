@@ -35,6 +35,17 @@ $(function(){
             			copy.addClass('last-item');
             		}
             	});
+
+                $('.contener-img').click(function(){
+                $('.contener-img').each(function(){
+                    $(this).removeClass('flip');
+                });
+                $(this).addClass('flip');
+            });
+            $('.flip').click(function(){
+                $(this).removeClass('flip');
+                console.log('removed flip');
+            });
             }
 
             last.removeClass('last-item');
