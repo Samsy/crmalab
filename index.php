@@ -7,10 +7,11 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title>CRMA 2015</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width">
+        <meta name="description" content="Hey, have a look at us." />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
         <link rel="stylesheet" href="css/normalize.min.css" />
         <link href="css/style.css" media="screen, projection" rel="stylesheet" type="text/css" />
+
         <!--[if lt IE 9]>
             <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
             <script>window.html5 || document.write('<script src="js/vendor/html5shiv.js"><\/script>')</script>
@@ -18,10 +19,14 @@
     </head>
     <body class="span12">
         <section class="header span12 center">
-            <img src="img/logo.png" class="span1 logo"/>
+            <a href="#top"><img src="img/logo.png" class="span1 logo"/></a>
         </section>
-        <section class="content">
-             <ul class='g'>
+        <section class="content" id="top">
+            <div class="loader">
+                <img src="img/loader.gif" />
+                <p>Incoming !</p>
+            </div>
+            <ul class="g">
             </ul>
         </section>
         <script src="js/vendor/jquery-1.10.1.min.js"></script>
