@@ -14,39 +14,6 @@ $(function(){
             	
         	}
             
-            // sinon on répète à l'infini et au delà
-            else {
-            	items = $('.g .contener');
-
-            	totalLength = items.length;
-
-            	if (LENGTH == 0) {
-            		LENGTH = items.length;
-            	}
-
-            	items.slice(0, LENGTH).each(function(i){
-
-            		copy = $(this).clone();
-            		copy.appendTo('.g');
-
-            		// last item
-            		if (i+1 == LENGTH) {
-            			LAST_ITEM += (i + 1);
-            			copy.addClass('last-item');
-            		}
-            	});
-
-                $('.contener-img').click(function(){
-                $('.contener-img').each(function(){
-                    $(this).removeClass('flip');
-                });
-                $(this).addClass('flip');
-            });
-            $('.flip').click(function(){
-                $(this).removeClass('flip');
-                console.log('removed flip');
-            });
-            }
 
             last.removeClass('last-item');
         }
