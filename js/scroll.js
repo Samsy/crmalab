@@ -14,28 +14,6 @@ $(function(){
             	
         	}
             
-            // sinon on répète à l'infini et au delà
-            else {
-            	items = $('.g .contener');
-
-            	totalLength = items.length;
-
-            	if (LENGTH == 0) {
-            		LENGTH = items.length;
-            	}
-
-            	items.slice(0, LENGTH).each(function(i){
-
-            		copy = $(this).clone();
-            		copy.appendTo('.g');
-
-            		// last item
-            		if (i+1 == LENGTH) {
-            			LAST_ITEM += (i + 1);
-            			copy.addClass('last-item');
-            		}
-            	});
-            }
 
             last.removeClass('last-item');
         }

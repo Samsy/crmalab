@@ -22,6 +22,7 @@
 }());
 
 LAST_ITEM = 0;
+var loaded = false;
 
 // Place any jQuery/helper plugins in here.
 var gettingPics = function gettingPics(){
@@ -32,12 +33,24 @@ var gettingPics = function gettingPics(){
         cache: false,
         url: API_URL,
         beforeSend: function(){
-            $('.loader').fadeIn('fast');
-            $('.g').hide();
+
+            if (loaded) {
+                return;
+            }
+            
+            $('.g').animate({ opacity: 0 }, 200, function() {
+                $('.loader').fadeIn('fast');
+            });
         },
         complete: function(){
-            $('.loader').fadeOut('fast');
-            $('.g').fadeIn('slow');
+            if (!loaded) {
+                $('.loader').fadeOut('fast', function() {
+                    $('.g').animate({ opacity: 1 });
+                });
+
+                loaded = true;
+            }
+            
             $('.contener-img').click(function(){
                 $('.contener-img').each(function(){
                     $(this).removeClass('flip');
