@@ -1,7 +1,11 @@
 var LENGTH = 0;
 
 $(function(){
-    $(document).scroll(function(){
+    $(document).scroll(function(e){
+
+        // Little parallax effect on the logo
+        var scrollOffset = $(document).scrollTop();
+        $('.header').css('top',(-scrollOffset*1.5));
 
         var last = $('.last-item');
         // console.log($('body').scrollTop() + ' / ' + last.offset().top);
