@@ -26,7 +26,6 @@ var loaded = false;
 
 // Place any jQuery/helper plugins in here.
 var gettingPics = function gettingPics(){
-    console.log('API Call to '+API_URL+' ...');
     $.ajax({
         type: "GET",
         dataType: "jsonp",
@@ -59,13 +58,11 @@ var gettingPics = function gettingPics(){
             });
             $('.flip').click(function(){
                 $(this).removeClass('flip');
-                console.log('removed flip');
             });
         },
         success: function(data) {
 
             // next api call url
-            console.log(data);
             API_URL = data.pagination.next_url;
             
             var length = data.data.length;
@@ -110,17 +107,3 @@ var gettingPics = function gettingPics(){
         }
     });
 }
-
-
-/* var hoverImages = function hoverImages(){
-    var nrImg;
-    $('.item').bind({
-        mouseenter: function(){
-            nrImg = $(this).attr('data-img');
-            $('.item-desc-'+nrImg).slideUp('fast');
-        },
-        mouseleave: function(){
-            $('.item-desc-'+nrImg).slideDown('fast');
-        }
-    });
-} */
